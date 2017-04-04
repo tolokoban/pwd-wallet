@@ -1,8 +1,14 @@
-<w-html app="main">
-    <section>
-        <center>
-            <wdg:button $text="English" $icon="flag-en" />
-            <wdg:button $text="Français" $icon="flag-fr" />
-        </center>
-    </section>
-</w-html>
+<x-html app="app" title="Password Wallet">
+  <wdg:layout-stack $hash="^#([a-zA-Z0-9]+)" slot:value="onPage">
+      <content list>
+          <section $$key="master">
+              <wdg:text id="master" $label="Master password" $wide="true" />
+              <wdg:button $text="OK" bind:action="master:action" slot:action="onSetPassword"/>
+              <blockquote>
+                  Please provide a strong master password, for this is your
+                  protection for all other passwords.
+              </blockquote>
+          </section>
+      </content>
+  </wdg:layout-stack>
+</x-html>

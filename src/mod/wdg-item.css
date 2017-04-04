@@ -1,0 +1,30 @@
+.wdg-item {
+  margin: 1rem;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,.5);
+  border: none;
+  border-radius: 0;
+}
+
+.wdg-item > .name {
+  font-weight: bold;
+
+}
+
+.wdg-item > .usr::before {
+  display: inline-block;
+  color: rgba(0,0,0,.4);
+  content: "User: ";
+}
+
+.wdg-item > .pwd {
+  color: rgba(255,0,0,.5);
+  font-style: italic;
+}
+
+.wdg-item:active > .pwd {
+  color: #000;
+  font-style: normal;
+  transition: color .3s;
+}

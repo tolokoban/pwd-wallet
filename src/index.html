@@ -1,13 +1,38 @@
 <x-html app="app" title="Password Wallet">
   <wdg:layout-stack $hash="^#([a-zA-Z0-9]+)" slot:value="onPage">
-      <content list>
+      <content>
           <section $$key="master">
-              <wdg:text id="master" $label="Master password" $wide="true" />
-              <wdg:button $text="OK" bind:action="master:action" slot:action="onSetPassword"/>
+              <wdg:text id="master" $label="Master password"
+                $type="password" $wide="true" $focus="true" />
+              <wdg:button $text="Decrypt passwords' list" $wide="true" $icon="right"
+                bind:action="master:action" slot:action="onSetPassword"/>
               <blockquote>
-                  Please provide a strong master password, for this is your
-                  protection for all other passwords.
+                  Please provide a strong master password (at least <b>10</b> characters),
+                  for this is your protection for all other passwords.
               </blockquote>
+          </section>
+          <section $$key="view">
+            <h1>Passwords Wallet</h1>
+            <div id="list"></div>
+            <hr/>
+            <wdg:flex>
+              <content>
+                <wdg:button $icon='close' $text="Close" $href="#master"/>
+                <wdg:button $icon='add' $text="Add" />
+              </content>
+            </wdg:flex>
+          </section>
+          <section $$key="new">
+            <h1>New password</h1>
+            <wdg:text id="newName" $label="Item's name (use '/' as separator)"
+                      $wide="true" />
+            <wdg:text id="newUsr" $label="User name" $wide="true" />
+            <wdg:flex>
+              <content>
+                <wdg:text id="newPwd" $label="Password" $wide="true" />
+                <wdg:icon $type="button" $content="add" slot:action="onRndPwd" />
+              </content>
+            </wdg:flex>
           </section>
       </content>
   </wdg:layout-stack>

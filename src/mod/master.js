@@ -17,8 +17,9 @@ Object.defineProperty(module.exports, 'password', {
     var t = Date.now();
     if (t - g_time > DURATION) {
       g_password = null;
-      location.hash = "";
-      Msg("The master password is reset after 5 minutes of inactivity.");
+      window.location.hash = "";
+      Msg("The master password is reseted after 5 minutes of inactivity.");
+      console.log("Password expiration: ", ((t - g_time) * 0.001).toFixed(0));
     }
     return g_password;
   },

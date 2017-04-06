@@ -1,39 +1,87 @@
 <x-html app="app" title="Password Wallet">
-  <wdg:layout-stack $hash="^#([a-zA-Z0-9]+)" slot:value="onPage">
-      <content>
-          <section $$key="master">
-              <wdg:text id="master" $label="Master password"
-                $type="password" $wide="true" $focus="true" />
-              <wdg:button $text="Decrypt passwords' list" $wide="true" $icon="right"
-                bind:action="master:action" slot:action="onSetPassword"/>
-              <blockquote>
-                  Please provide a strong master password (at least <b>10</b> characters),
-                  for this is your protection for all other passwords.
-              </blockquote>
-          </section>
-          <section $$key="view">
-            <h1>Passwords Wallet</h1>
-            <div id="list"></div>
-            <hr/>
-            <wdg:flex>
-              <content>
-                <wdg:button $icon='close' $text="Close" $href="#master"/>
-                <wdg:button $icon='add' $text="Add" />
-              </content>
-            </wdg:flex>
-          </section>
-          <section $$key="new">
-            <h1>New password</h1>
-            <wdg:text id="newName" $label="Item's name (use '/' as separator)"
-                      $wide="true" />
-            <wdg:text id="newUsr" $label="User name" $wide="true" />
-            <wdg:flex>
-              <content>
-                <wdg:text id="newPwd" $label="Password" $wide="true" />
-                <wdg:icon $type="button" $content="add" slot:action="onRndPwd" />
-              </content>
-            </wdg:flex>
-          </section>
-      </content>
-  </wdg:layout-stack>
+  <head>
+      <link rel="manifest" href="/pwd-wallet/manifest.json">
+  </head>
+  <body class="style">
+    <wdg:layout-stack $hash="^#([a-zA-Z0-9]+)" slot:args="onPage">
+        <content>
+            <section $$key="master">
+              <wdg:flex $orientation="V" $justify="between">
+                <content>
+                  <h1 $$grow="0">Master Password</h1>
+                  <wdg:text id="master" $label="Master password" $width="100%"
+                    $type="password" $wide="true" $focus="true" />
+                  <wdg:button $text="Decrypt passwords' list" $wide="true" $icon="right"
+                    bind:action="master:action" slot:action="onSetPassword"/>
+                  <blockquote>
+                      Please provide a strong master password (at least <b>10 characters</b>),
+                      for this is your protection for all other passwords.
+                  </blockquote>
+                  <input type="file" id="file" />
+                  <wdg:flex $justify="between" $$grow="0">
+                    <content>
+                      <wdg:button $icon="import" $text="Import" slot:action="onImport"/>
+                      <wdg:button $icon="export" $text="Export" slot:action="onExport"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>          
+            <section $$key="view">
+              <wdg:flex $orientation="V" $justify="space-between">
+                <content>
+                  <h1 $$grow="0">Passwords Wallet</h1>
+                  <div id="list"></div>
+                  <wdg:flex $type="fill" $$grow="0">
+                    <content>
+                      <wdg:button $icon='close' $type="simple" $text="Close" $href="#master"/>
+                      <wdg:button $icon='add' $text="Add" $href="#new"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>          
+            <section $$key="new">
+              <wdg:flex $orientation="V" $justify="between">
+                <content>
+                  <h1 $$grow="0">New password</h1>
+                  <article>
+                    <wdg:text id="newName" $label="Item's name"
+                              $wide="true" />
+                    <wdg:text id="newUsr" $label="User name" $wide="true" />
+                    <wdg:flex $type="fill">
+                      <content>
+                        <wdg:text id="newPwd" $label="Password" $wide="true" />
+                        <wdg:icon $button="true" $content="add" $size="1.5rem" 
+                          $$grow="0"
+                          slot:action="onRndPwd" />
+                      </content>
+                    </wdg:flex>
+                  </article>
+                  <wdg:flex $type="fill" $$grow="0">
+                    <content>
+                      <wdg:button $icon='left' $type="simple" $text="Cancel" $href="#master"/>
+                      <wdg:button $icon='add' $text="OK" slot:action="onNewPwd"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>
+            <section $$key="del">
+              <wdg:flex $justify="between" $orientation="V">
+                <content>
+                  <h1>Delete a password</h1>
+                  <p class="confirm">Are you sure you want to delete the password for <b id="nameToDelete"></b>?</p>
+                  <wdg:flex $$grow="0" $justify="between">
+                    <content>
+                      <wdg:button $icon='left' $type="simple" $text="Cancel" $href="#master"/>
+                      <wdg:button $icon='delete' $text="Delete" $type="warning" slot:action="onDelPwd"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>
+        </content>
+    </wdg:layout-stack>
+  </body>
 </x-html>

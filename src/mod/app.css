@@ -7,8 +7,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url(app/back.jpg);
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wgARCAAFABgDAREAAhEBAxEB/8QAFgAAAwAAAAAAAAAAAAAAAAAAAgMJ/8QAFwEBAAMAAAAAAAAAAAAAAAAAAAEFBv/aAAwDAQACEAMQAAABrFkLcRKP/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQMAFAIEEf/aAAgBAQABBQKsnlVEw1kkf//EABYRAAMAAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGIiIj/xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8BrKys/8QAIhAAAQEHBQEAAAAAAAAAAAAAAQIAAxEhMTJBEkJRYaLS/9oACAEBAAY/AoaJEg3KqIwz2Ws9L+mmje8FyqB4oDPAb//EABwQAQABBAMAAAAAAAAAAAAAAAEhETFBYQAQUf/aAAgBAQABPyGirwDClVnBqmbHTjdqJoKUYget2ef/2gAMAwEAAgADAAAAEAH/AP/EABoRAAIDAQEAAAAAAAAAAAAAAAFhAEGh0VH/2gAIAQMBAT8QRp64rT2Dws2aJc//xAAaEQACAwEBAAAAAAAAAAAAAAABYQBBodFR/9oACAECAQE/EGYOKOwch9KFCwFP/8QAGBABAQEBAQAAAAAAAAAAAAAAARExIQD/2gAIAQEAAT8QAednOBFDgi7CoeggdDYyLhN1OFFK/wD/2Q==);
   background-repeat: repeat;
+  font-family: 'Josefin Sans', josefin-sans, sans-serif;
+  font-size: 4vh;
 }
 
 body > div.wdg-layout-stack {
@@ -22,14 +24,64 @@ body > div.wdg-layout-stack {
   overflow: auto;
 }
 
+p.confirm {
+  font-size: 150%;
+  text-align: justify;
+}
+
 section {
-  padding: 1rem;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+section > div.wdg-flex.V {
+  height: 100%;
 }
 
 blockquote {
-    background: #eef;
-    color: rgba(0,0,0,.5);
-    font-style: italic;
-    padding: 1rem;
-    box-shadow: -4px 0 #aaf;
+  background: rgba(255,255,255,.6);
+  margin: 2rem;
+  color: rgba(0,0,0,.5);
+  font-style: italic;
+  padding: 1rem;
+  box-shadow: -4px 0 #724E10;
+}
+
+body.style .wdg-button {
+  background: #dc9;
+  border-radius: 8px;
+}
+
+body.style .theme-color-bg-1 {
+    background-color: #724E10;
+    color: #dc9;
+}
+
+body.style .wdg-button.simple {
+  color: #724E10;
+  background: transparent;
+}
+
+body.style .wdg-button.warning {
+  background: #724E10;
+}
+
+input[type=file] {
+  display: none;
+}
+
+div#list {
+  overflow: auto;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem -1rem;
+}
+
+h1 {
+  margin: 0;
 }

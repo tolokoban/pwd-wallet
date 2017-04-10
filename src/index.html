@@ -52,6 +52,34 @@
                     <wdg:flex $type="fill">
                       <content>
                         <wdg:text id="newPwd" $label="Password" $wide="true" />
+                        <wdg:icon $button="true" $content="refresh" $size="1.5rem" 
+                          $$grow="0"
+                          slot:action="onRndPwd" />
+                      </content>
+                    </wdg:flex>
+                  </article>
+                  <wdg:flex $type="fill" $$grow="0">
+                    <content>
+                      <wdg:button $icon='left' $type="simple" $text="Cancel" $href="#master"/>
+                      <wdg:button $icon='add' $text="OK" slot:action="onNewPwd"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>
+            <section $$key="edit">
+              <wdg:flex $orientation="V" $justify="between">
+                <content>
+                  <center $$grow="0"><wdg:button $text="Delete" $icon="delete" $type="warning"/></center>
+                  <hr $$grow="0"/>
+                  <h1 $$grow="0">Edit password</h1>
+                  <article>
+                    <wdg:text id="editName" $label="Item's name"
+                              $wide="true" />
+                    <wdg:text id="editUsr" $label="User name" $wide="true" />
+                    <wdg:flex $type="fill">
+                      <content>
+                        <wdg:text id="editPwd" $label="Password" $wide="true" />
                         <wdg:icon $button="true" $content="add" $size="1.5rem" 
                           $$grow="0"
                           slot:action="onRndPwd" />

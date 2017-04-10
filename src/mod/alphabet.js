@@ -9,5 +9,30 @@
 
 "use strict";
 
-module.exports = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01213456789" +
+var ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01213456789" +
   ".,:;+-*/$_()&%?'\"@#!<>=";
+
+ALPHABET.isInThisAlphabet = function( text ) {
+  for (var i=0 ; i<text.length ; i++) {
+    if (ALPHABET.indexOf( text.charAt(i) ) == -1) return false;
+  }
+  return true;
+};
+
+ALPHABET.toIntArray = function( text ) {
+  var arr = [];
+  for (var i=0 ; i<text.length ; i++) {
+    arr.push( ALPHABET.indexOf( text.charAt(i) ) );
+  }
+  return arr;
+};
+
+ALPHABET.fromIntArray = function( arr ) {
+  var text = '';
+  arr.forEach(function (code) {
+    text += ALPHABET.charAt( code );
+  });
+  return text;
+};
+
+module.exports = ALPHABET;

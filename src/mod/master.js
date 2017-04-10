@@ -5,6 +5,7 @@
 "use strict";
 
 var Msg = require( "tfw.message" ).info;
+var Hash = require("hash");
 var Crypt = require( "crypt" );
 
 
@@ -31,14 +32,16 @@ Object.defineProperty( module.exports, 'password', {
   enumerable: true
 } );
 
-module.exports.encode = function ( plainText ) {
-  var key = module.exports.password;
-  if ( key ) return Crypt.encode( plainText, key );
-  return "";
+module.exports.encode = function ( plainText, usr ) {
+  if (typeof usr !== 'string') throw Error("Second argument is missing (usr)!");
+  if (!module.exports.password) return "";
+  var key = Hash( module.exports.password );
+  return Crypt.encode( plainText, key );
 };
 
-module.exports.decode = function ( code ) {
-  var key = module.exports.password;
-  if ( key ) return Crypt.decode( code, key );
-  return "";
+module.exports.decode = function ( code, usr ) {
+  if (typeof usr !== 'string') throw Error("Second argument is missing (usr)!");
+  if (!module.exports.password) return "";
+  var key = Hash( module.exports.password );
+  return Crypt.decode( code, key );
 };

@@ -16,8 +16,6 @@ var WdgItem = require( "wdg-item" );
 var Alphabet = require( "alphabet" );
 
 
-
-
 var g_nameToDelete;
 var g_masterPassword = null;
 var PAGES = [ "master", "view", "new", "del" ];
@@ -54,7 +52,7 @@ exports.onPage = function ( args ) {
     case 'new':
       W( 'newName' ).focus = true;
       W( 'newName' ).value = "";
-      W( 'newUser' ).value = "";
+      W( 'newUsr' ).value = "";
       exports.onRndPwd();
       break;
     case "del":
@@ -111,7 +109,7 @@ exports.onRndPwd = function () {
 exports.onNewPwd = function () {
   var name = W( 'newName' ).value;
   var usr = W( 'newUsr' ).value;
-  var pwd = Master.encode( W( 'newPwd' ).value );
+  var pwd = Master.encode( W( 'newPwd' ).value, name );
   Wallet.set( name, usr, pwd );
   window.location.hash = "view";
 };

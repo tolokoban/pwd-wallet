@@ -44,7 +44,7 @@ var WdgItem = function ( opts ) {
 
   $.on( elem, {
     down: function () {
-      pwd.textContent = Master.decode( that.pwd );
+      pwd.textContent = Master.decode( that.pwd, that.name );
       $.addClass( elem, 'active' );
     },
     up: function () {

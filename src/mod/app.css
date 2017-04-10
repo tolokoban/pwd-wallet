@@ -29,6 +29,11 @@ p.confirm {
   text-align: justify;
 }
 
+article {
+  display: block;
+  width: 100%;
+}
+
 section {
     padding: 1rem;
     position: absolute;
@@ -84,4 +89,31 @@ div#list {
 
 h1 {
   margin: 0;
+}
+
+
+#showHint {
+  color: rgba(0,0,0,.5);
+}
+
+#showUsr {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#showPwd {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 150%;
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+  transition: all .2s;
+  opacity: 0;
+}
+
+#showPanel.reveal #showPwd {
+  transition: all 1s;
+  opacity: 1;
 }

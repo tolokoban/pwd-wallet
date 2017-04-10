@@ -1,8 +1,6 @@
 "use strict";
 
 var Local = require( "tfw.storage" ).local;
-var SaveAs = require( "tfw.fileapi" ).saveAs;
-
 
 module.exports = {
   /**
@@ -10,69 +8,35 @@ module.exports = {
    * the argument `pwd`.
    */
   set: function ( name, usr, pwd ) {
-    var data = Local.get( "wallet", [] );
+    var data = get();
     module.exports.del( name );
     data.push( {
       name: name,
       usr: usr,
       pwd: pwd
     } );
-    Local.set( "wallet", data );
+    set( data );
   },
   del: function ( name ) {
-    var data = Local.get( "wallet", [] );
-    var idx = data.findIndex( equalIgnoreCase( name ) );
-    if ( idx != -1 ) {
-      // Remove the index.    
-      data = data.splice( idx, 1 );
-    }
-    Local.set( "wallet", data );
+    set( get().filter( nameNotEqual( name ) ) );
   },
   get: function ( name ) {
-    var data = Local.get( "wallet", [] );
-    return data.find( equalIgnoreCase( name ) );
+    var data = get();
+    return data.find( nameEqual( name ) );
   },
   clear: function () {
-    Local.set( "wallet", [] );
-  },
-  export: function () {
-    SaveAs( new Blob( [ JSON.stringify( Local.get( "wallet", [] ), null, '  ' ) ] ),
-      "passwords.json" );
-  },
-  import: function ( content ) {
-    return new Promise( function ( resolve, reject ) {
-      if ( typeof content !== 'string' ) {
-        reject( "Only text files are accepted!" );
-        return;
-      }
-      try {
-        var data = JSON.parse( content );
-        if ( !Array.isArray( data ) ) {
-          reject( "This is not a valid JSON Array file!" );
-          return;
-        }
-        var count = 0;
-        data.forEach( function ( item ) {
-          if ( typeof item.name !== 'string' ) return;
-          if ( typeof item.usr !== 'string' ) return;
-          if ( typeof item.pwd !== 'string' ) return;
-          module.exports.set( item.name, item.usr, item.pwd );
-          count++;
-        } );
-        resolve( "<html>Passwords imported: <b>" + count + "</b>." );
-        window.location.hash = "view";
-      } catch ( ex ) {
-        reject( "This is not a valid JSON file!" );
-      }
-    } );
+    set();
   },
   list: function () {
-    var data = Local.get( "wallet", [] );
-    var list = [];
-    for ( var key in data ) {
-      list.push( data[ key ] );
-    }
-    list.sort();
+    var data = get();
+    var list = data.slice();
+    list.sort( function ( a, b ) {
+      a = a.name.toLowerCase();
+      b = b.name.toLowerCase();
+      if ( a < b ) return -1;
+      if ( a > b ) return +1;
+      return 0;
+    } );
     return list;
   },
   /**
@@ -102,7 +66,7 @@ module.exports = {
    * ]
    */
   tree: function () {
-    var list = module.exports.list().maps( function ( itm ) {
+    var list = module.exports.list().map( function ( itm ) {
       return {
         key: itm,
         val: itm.split( '/' ).map( function ( x ) {
@@ -110,15 +74,32 @@ module.exports = {
         } )
       };
     } );
+
   }
 };
 
-function equalIgnoreCase( name ) {
-  if ( typeof name !== 'string' ) name = '';
-  else name = name.toLowerCase();
-  return function ( item ) {
-    if ( typeof item !== 'object' ) return false;
-    if ( typeof item.name !== 'string' ) return false;
-    return item.name.toLowerCase() == name;
+
+function get() {
+  var arr = Local.get( "wallet", [] );
+  if ( !Array.isArray( arr ) ) return [];
+  return arr;
+}
+
+function set( value ) {
+  if ( typeof value === 'undefined' ) value = [];
+  Local.set( "wallet", value );
+}
+
+function nameEqual( name ) {
+  name = name.toLowerCase();
+  return function ( rec ) {
+    return rec.name.toLowerCase() == name;
+  };
+}
+
+function nameNotEqual( name ) {
+  name = name.toLowerCase();
+  return function ( rec ) {
+    return rec.name.toLowerCase() != name;
   };
 }

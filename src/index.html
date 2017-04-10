@@ -18,6 +18,9 @@
                       for this is your protection for all other passwords.
                   </blockquote>
                   <input type="file" id="file" />
+                  <center $$grow="0">
+                    <wdg:button $icon="gear" $text="Config" $enabled="false"/>
+                  </center>
                   <wdg:flex $justify="between" $$grow="0">
                     <content>
                       <wdg:button $icon="import" $text="Import" slot:action="onImport"/>
@@ -28,7 +31,7 @@
               </wdg:flex>
             </section>          
             <section $$key="view">
-              <wdg:flex $orientation="V" $justify="space-between">
+              <wdg:flex $orientation="V" $justify="space-between" $type="fill">              
                 <content>
                   <h1 $$grow="0">Passwords Wallet</h1>
                   <div id="list"></div>
@@ -41,8 +44,27 @@
                 </content>
               </wdg:flex>
             </section>          
+            <section $$key="show">
+              <wdg:flex $orientation="V" $justify="between" $type="default">
+                <content>
+                  <h1 $$grow="0" id="showName">Name...</h1>
+                  <article id="showPanel">
+                    <div id="showUsr"></div>
+                    <div id="showPwd" class="theme-elevation-2"></div>
+                    <div id="showHint">Press to reveal the password...</div>
+                  </article>
+                  <wdg:flex $type="fill" $$grow="0">
+                    <content>
+                      <wdg:button $icon='left' $type="simple" $text="Back" $href="#view"/>
+                      <wdg:button $icon='delete' $text="Delete" $type="warning" 
+                          slot:action="onConfirmDel"/>
+                    </content>
+                  </wdg:flex>
+                </content>
+              </wdg:flex>
+            </section>
             <section $$key="new">
-              <wdg:flex $orientation="V" $justify="between">
+              <wdg:flex $orientation="V" $justify="between" $type="fill">
                 <content>
                   <h1 $$grow="0">New password</h1>
                   <article>
@@ -52,9 +74,12 @@
                     <wdg:flex $type="fill">
                       <content>
                         <wdg:text id="newPwd" $label="Password" $wide="true" />
-                        <wdg:icon $button="true" $content="refresh" $size="1.5rem" 
+                        <wdg:icon $button="true" $content="refresh" $size="1rem" 
                           $$grow="0"
                           slot:action="onRndPwd" />
+                          <wdg:icon $button="true" $content="add" $size="1rem" 
+                            $$grow="0"
+                            slot:action="onRndAddCharPwd" />
                       </content>
                     </wdg:flex>
                   </article>

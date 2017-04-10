@@ -1,2 +1,189 @@
-function precache(){return caches.open(CACHE).then(function(n){return n.addAll(["./index.html","./manifest.json","./js/@index.js","./css/@index.css","./css/app/earth.mini.png","./css/app/earth.png","./css/app/hero.mini.png","./css/app/hero.png","./css/app/icon-192.png","./css/app/icon-512.png","./css/app/moon.mini.png","./css/app/moon.png"])})}function fromCache(n){return caches.open(CACHE).then(function(e){return e.match(n).then(function(n){return n||Promise.reject("no-match")})})}function update(n){return caches.open(CACHE).then(function(e){return fetch(n).then(function(t){return e.put(n,t)})})}var window=self;window.require=function(){var n={},e={},t="function"==typeof window.require?window.require:null,r=function(o,i){if("node://"==o.substr(0,7)){if(!t)throw Error("[require] NodeJS is not available to load module `"+o+"`!");return t(o.substr(7))}if("function"==typeof i)return void(e[o]=i);var s;if(void 0===(i=e[o])){var a=new Error("Required module is missing: "+o);throw console.error(a.stack),a}if(void 0===(s=n[o])){s={exports:{}};var c=s.exports;i(r,s,c),n[o]=s.exports,s=s.exports}return s};return r}(),require("$",function(n,e,t){t.config={name:'"pwd-wallet"',description:'"Phone app to strore encrypted passwords."',author:'"tolokoban"',version:'"0.0.3"',major:"0",minor:"0",revision:"3",date:"2017-04-06T19:25:04.000Z",consts:{}};var r=null;t.lang=function(n){return void 0===n&&(window.localStorage&&(n=window.localStorage.getItem("Language")),n||(n=window.navigator.language)||(n=window.navigator.browserLanguage)||(n="fr"),n=n.substr(0,2).toLowerCase()),r=n,window.localStorage&&window.localStorage.setItem("Language",n),n},t.intl=function(n,e){var r,o,i,s,a,c,u,l=n[t.lang()],f=e[0];for(u in n)break;if(!u)return f;if(!l&&!(l=n[u]))return f;if(r=l[f],r||(l=n[u],r=l[f]),!r)return f;if(e.length>1){for(o="",a=0,i=0;i<r.length;i++)s=r.charAt(i),"$"===s?(o+=r.substring(a,i),i++,c=r.charCodeAt(i)-48,c<0||c>=e.length?o+="$"+r.charAt(i):o+=e[c],a=i+1):"\\"===s&&(o+=r.substring(a,i),i++,o+=r.charAt(i),a=i+1);o+=r.substr(a),r=o}return r}});var CACHE="cache-and-update";self.addEventListener("install",function(n){console.log("[SW] install."),n.waitUntil(precache())}),self.addEventListener("activate",function(n){console.log("[SW] activate."),n.waitUntil(precache())}),self.addEventListener("fetch",function(n){console.log("[SW] fetch. ",n.request.url),n.respondWith(fromCache(n.request)),n.waitUntil(update(n.request))}),self.addEventListener("message",function(n){console.log("[SW] message.")}),self.addEventListener("sync",function(n){console.log("[SW] sync.")}),self.addEventListener("push",function(n){console.log("[SW] push.")});
-//# sourceMappingURL=mod/offline.wrk.map
+var window = self;
+
+/**********************************************************************
+ require( 'require' )
+ -----------------------------------------------------------------------
+ @example
+
+ var Path = require("node://path");  // Only in NodeJS/NW.js environment.
+ var Button = require("tfw.button");
+
+ **********************************************************************/
+
+window.require = function() {
+    var modules = {};
+    var definitions = {};
+    var nodejs_require = typeof window.require === 'function' ? window.require : null;
+
+    var f = function(id, body) {
+        if( id.substr( 0, 7 ) == 'node://' ) {
+            // Calling for a NodeJS module.
+            if( !nodejs_require ) {
+                throw Error( "[require] NodeJS is not available to load module `" + id + "`!" );
+            }
+            return nodejs_require( id.substr( 7 ) );
+        }
+
+        if( typeof body === 'function' ) {
+            definitions[id] = body;
+            return;
+        }
+        var mod;
+        body = definitions[id];
+        if (typeof body === 'undefined') {
+            var err = new Error("Required module is missing: " + id);   
+            console.error(err.stack);
+            throw err;
+        }
+        mod = modules[id];
+        if (typeof mod === 'undefined') {
+            mod = {exports: {}};
+            var exports = mod.exports;
+            body(f, mod, exports);
+            modules[id] = mod.exports;
+            mod = mod.exports;
+            //console.log("Module initialized: " + id);
+        }
+        return mod;
+    };
+    return f;
+}();
+/** @module $ */require( '$', function(require, module, exports) {   exports.config={"name":"\"pwd-wallet\"","description":"\"Phone app to strore encrypted passwords.\"","author":"\"tolokoban\"","version":"\"0.0.3\"","major":"0","minor":"0","revision":"3","date":"2017-04-06T19:25:04.000Z","consts":{}};
+var currentLang = null;
+exports.lang = function(lang) {
+    if (lang === undefined) {
+        if (window.localStorage) {
+            lang = window.localStorage.getItem("Language");
+        }
+        if (!lang) {
+            lang = window.navigator.language;
+            if (!lang) {
+                lang = window.navigator.browserLanguage;
+                if (!lang) {
+                    lang = "fr";
+                }
+            }
+        }
+        lang = lang.substr(0, 2).toLowerCase();
+    }
+    currentLang = lang;
+    if (window.localStorage) {
+        window.localStorage.setItem("Language", lang);
+    }
+    return lang;
+};
+exports.intl = function(words, params) {
+    var dic = words[exports.lang()],
+        k = params[0],
+        txt, newTxt, i, c, lastIdx, pos;
+    var defLang;
+    for( defLang in words ) break;
+    if( !defLang ) return k;
+    if (!dic) {
+        dic = words[defLang];
+        if( !dic ) {
+            return k;
+        }
+    }
+    txt = dic[k];
+    if( !txt ) {
+        dic = words[defLang];
+        txt = dic[k];
+    }
+    if (!txt) return k;
+    if (params.length > 1) {
+        newTxt = "";
+        lastIdx = 0;
+        for (i = 0 ; i < txt.length ; i++) {
+            c = txt.charAt(i);
+            if (c === '$') {
+                newTxt += txt.substring(lastIdx, i);
+                i++;
+                pos = txt.charCodeAt(i) - 48;
+                if (pos < 0 || pos >= params.length) {
+                    newTxt += "$" + txt.charAt(i);
+                } else {
+                    newTxt += params[pos];
+                }
+                lastIdx = i + 1;
+            } else if (c === '\\') {
+                newTxt += txt.substring(lastIdx, i);
+                i++;
+                newTxt += txt.charAt(i);
+                lastIdx = i + 1;
+            }
+        }
+        newTxt += txt.substr(lastIdx);
+        txt = newTxt;
+    }
+    return txt;
+};
+
+
+
+});function precache() {
+    return caches.open(CACHE).then(function (cache) {
+        return cache.addAll([
+            './index.html',
+            './manifest.json',
+            './js/@index.js',
+            './css/@index.css',
+            './css/app/earth.mini.png',
+            './css/app/earth.png',
+            './css/app/hero.mini.png',
+            './css/app/hero.png',
+            './css/app/icon-192.png',
+            './css/app/icon-512.png',
+            './css/app/moon.mini.png',
+            './css/app/moon.png'
+        ]);
+    });
+}
+
+function fromCache(request) {
+    return caches.open(CACHE).then(function (cache) {
+        return cache.match(request).then(function (matching) {
+            return matching || Promise.reject('no-match');
+        });
+    });
+}
+
+function update(request) {
+    return caches.open(CACHE).then(function (cache) {
+        return fetch(request).then(function (response) {
+            return cache.put(request, response);
+        });
+    });
+}
+
+
+var CACHE = 'cache-and-update';
+
+self.addEventListener('install', function(evt) {
+    console.log('[SW] install.');
+    evt.waitUntil(precache());
+});
+
+self.addEventListener('activate', function(evt) {
+    console.log('[SW] activate.');
+    evt.waitUntil(precache());
+});
+
+self.addEventListener('fetch', function(evt) {
+    console.log('[SW] fetch. ', evt.request.url);
+    evt.respondWith(fromCache(evt.request));
+    evt.waitUntil(update(evt.request));
+});
+
+self.addEventListener('message', function(evt) {
+    console.log('[SW] message.');
+});
+
+self.addEventListener('sync', function(evt) {
+    console.log('[SW] sync.');
+});
+
+self.addEventListener('push', function(evt) {
+    console.log('[SW] push.');
+});
+

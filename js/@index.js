@@ -62,7 +62,7 @@ addListener(
         APP = require('app');
 setTimeout(function (){if(typeof APP.start==='function')APP.start()});
 var W = require('x-widget');
-        W('wdg.layout-stack33', 'wdg.layout-stack', {
+        W('wdg.layout-stack0', 'wdg.layout-stack', {
             hash: "^#([a-zA-Z0-9]+)",
             content: [
           W({
@@ -70,7 +70,7 @@ var W = require('x-widget');
               prop: {"$key": "master"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex34', 'wdg.flex', {
+                                W('wdg.flex1', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   content: [
@@ -84,7 +84,7 @@ var W = require('x-widget');
                       type: "password",
                       wide: "true",
                       focus: "true"}),
-                                      W('wdg.button35', 'wdg.button', {
+                                      W('wdg.button2', 'wdg.button', {
                       text: "Decrypt passwords' list",
                       wide: "true",
                       icon: "right"}),
@@ -106,19 +106,19 @@ var W = require('x-widget');
                       prop: {"$grow": "0"},
                       children: [
                         "\r\n                    ",
-                                                W('wdg.button36', 'wdg.button', {
+                                                W('wdg.button3', 'wdg.button', {
                           icon: "gear",
                           text: "Config",
                           enabled: "false"}),
                         "\r\n                  "]}),
-                                      W('wdg.flex37', 'wdg.flex', {
+                                      W('wdg.flex4', 'wdg.flex', {
                       justify: "between",
                       $grow: "0",
                       content: [
-                                              W('wdg.button38', 'wdg.button', {
+                                              W('wdg.button5', 'wdg.button', {
                           icon: "import",
                           text: "Import"}),
-                                              W('wdg.button39', 'wdg.button', {
+                                              W('wdg.button6', 'wdg.button', {
                           icon: "export",
                           text: "Export"})]})]}),
                 "\r\n            "]}),
@@ -127,7 +127,7 @@ var W = require('x-widget');
               prop: {"$key": "view"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex40', 'wdg.flex', {
+                                W('wdg.flex7', 'wdg.flex', {
                   orientation: "V",
                   justify: "space-between",
                   type: "fill",
@@ -139,16 +139,16 @@ var W = require('x-widget');
                   W({
                       elem: "div",
                       attr: {"id": "list"}}),
-                                      W('wdg.flex41', 'wdg.flex', {
+                                      W('wdg.flex8', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button42', 'wdg.button', {
+                                              W('wdg.button9', 'wdg.button', {
                           icon: "close",
                           type: "simple",
                           text: "Close",
                           href: "#master"}),
-                                              W('wdg.button43', 'wdg.button', {
+                                              W('wdg.button10', 'wdg.button', {
                           icon: "add",
                           text: "Add",
                           href: "#new"})]})]}),
@@ -158,7 +158,7 @@ var W = require('x-widget');
               prop: {"$key": "show"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex44', 'wdg.flex', {
+                                W('wdg.flex11', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   type: "default",
@@ -188,16 +188,16 @@ var W = require('x-widget');
                           attr: {"id": "showHint"},
                           children: ["Press to reveal the password..."]}),
                         "\r\n                  "]}),
-                                      W('wdg.flex45', 'wdg.flex', {
+                                      W('wdg.flex12', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button46', 'wdg.button', {
+                                              W('wdg.button13', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Back",
                           href: "#view"}),
-                                              W('wdg.button47', 'wdg.button', {
+                                              W('wdg.button14', 'wdg.button', {
                           icon: "delete",
                           text: "Delete",
                           type: "warning"})]})]}),
@@ -207,7 +207,7 @@ var W = require('x-widget');
               prop: {"$key": "new"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex48', 'wdg.flex', {
+                                W('wdg.flex15', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   type: "fill",
@@ -228,33 +228,33 @@ var W = require('x-widget');
                           label: "User name",
                           wide: "true"}),
                         "\r\n                    ",
-                                                W('wdg.flex49', 'wdg.flex', {
+                                                W('wdg.flex16', 'wdg.flex', {
                           type: "fill",
                           content: [
                                                       W('newPwd', 'wdg.text', {
                               label: "Password",
                               wide: "true"}),
-                                                      W('wdg.icon50', 'wdg.icon', {
+                                                      W('wdg.icon17', 'wdg.icon', {
                               button: "true",
                               content: "refresh",
                               size: "1rem",
                               $grow: "0"}),
-                                                      W('wdg.icon51', 'wdg.icon', {
+                                                      W('wdg.icon18', 'wdg.icon', {
                               button: "true",
                               content: "add",
                               size: "1rem",
                               $grow: "0"})]}),
                         "\r\n                  "]}),
-                                      W('wdg.flex52', 'wdg.flex', {
+                                      W('wdg.flex19', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button53', 'wdg.button', {
+                                              W('wdg.button20', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-                                              W('wdg.button54', 'wdg.button', {
+                                              W('wdg.button21', 'wdg.button', {
                           icon: "add",
                           text: "OK"})]})]}),
                 "\r\n            "]}),
@@ -263,14 +263,14 @@ var W = require('x-widget');
               prop: {"$key": "edit"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex55', 'wdg.flex', {
+                                W('wdg.flex22', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   content: [
                   W({
                       elem: "center",
                       prop: {"$grow": "0"},
-                      children: [                        W('wdg.button56', 'wdg.button', {
+                      children: [                        W('wdg.button23', 'wdg.button', {
                           text: "Delete",
                           icon: "delete",
                           type: "warning"})]}),
@@ -293,28 +293,28 @@ var W = require('x-widget');
                           label: "User name",
                           wide: "true"}),
                         "\r\n                    ",
-                                                W('wdg.flex57', 'wdg.flex', {
+                                                W('wdg.flex24', 'wdg.flex', {
                           type: "fill",
                           content: [
                                                       W('editPwd', 'wdg.text', {
                               label: "Password",
                               wide: "true"}),
-                                                      W('wdg.icon58', 'wdg.icon', {
+                                                      W('wdg.icon25', 'wdg.icon', {
                               button: "true",
                               content: "add",
                               size: "1.5rem",
                               $grow: "0"})]}),
                         "\r\n                  "]}),
-                                      W('wdg.flex59', 'wdg.flex', {
+                                      W('wdg.flex26', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button60', 'wdg.button', {
+                                              W('wdg.button27', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-                                              W('wdg.button61', 'wdg.button', {
+                                              W('wdg.button28', 'wdg.button', {
                           icon: "add",
                           text: "OK"})]})]}),
                 "\r\n            "]}),
@@ -323,7 +323,7 @@ var W = require('x-widget');
               prop: {"$key": "del"},
               children: [
                 "\r\n              ",
-                                W('wdg.flex62', 'wdg.flex', {
+                                W('wdg.flex29', 'wdg.flex', {
                   justify: "between",
                   orientation: "V",
                   content: [
@@ -339,34 +339,34 @@ var W = require('x-widget');
                           elem: "b",
                           attr: {"id": "nameToDelete"}}),
                         "?"]}),
-                                      W('wdg.flex63', 'wdg.flex', {
+                                      W('wdg.flex30', 'wdg.flex', {
                       $grow: "0",
                       justify: "between",
                       content: [
-                                              W('wdg.button64', 'wdg.button', {
+                                              W('wdg.button31', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-                                              W('wdg.button65', 'wdg.button', {
+                                              W('wdg.button32', 'wdg.button', {
                           icon: "delete",
                           text: "Delete",
                           type: "warning"})]})]}),
                 "\r\n            "]})]})
-        W.bind('wdg.layout-stack33',{"args":{"S":["onPage"]}});
-        W.bind('wdg.button35',{"action":{"B":[["master","action"]],"S":["onSetPassword"]}});
-        W.bind('wdg.button38',{"action":{"S":["onImport"]}});
-        W.bind('wdg.button39',{"action":{"S":["onExport"]}});
-        W.bind('wdg.button47',{"action":{"S":["onConfirmDel"]}});
-        W.bind('wdg.icon50',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.icon51',{"action":{"S":["onRndAddCharPwd"]}});
-        W.bind('wdg.button54',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.icon58',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.button61',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.button65',{"action":{"S":["onDelPwd"]}});
+        W.bind('wdg.layout-stack0',{"args":{"S":["onPage"]}});
+        W.bind('wdg.button2',{"action":{"B":[["master","action"]],"S":["onSetPassword"]}});
+        W.bind('wdg.button5',{"action":{"S":["onImport"]}});
+        W.bind('wdg.button6',{"action":{"S":["onExport"]}});
+        W.bind('wdg.button14',{"action":{"S":["onConfirmDel"]}});
+        W.bind('wdg.icon17',{"action":{"S":["onRndPwd"]}});
+        W.bind('wdg.icon18',{"action":{"S":["onRndAddCharPwd"]}});
+        W.bind('wdg.button21',{"action":{"S":["onNewPwd"]}});
+        W.bind('wdg.icon25',{"action":{"S":["onRndPwd"]}});
+        W.bind('wdg.button28',{"action":{"S":["onNewPwd"]}});
+        W.bind('wdg.button32',{"action":{"S":["onDelPwd"]}});
     }
 );
-nction(r,n,o){o.config={name:'"pwd-wallet"',description:'"Phone app to strore encrypted passwords."',author:'"tolokoban"',version:'"0.0.5"',major:"0",minor:"0",revision:"5",date:"2017-04-11T15:05:25.000Z",consts:{}};var t=null;o.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),t=r,window.localStorage&&window.localStorage.setItem("Language",r),r},o.intl=function(r,n){var t,a,e,i,g,l,s,u=r[o.lang()],w=n[0];for(s in r)break;if(!s)return w;if(!u&&!(u=r[s]))return w;if(t=u[w],t||(u=r[s],t=u[w]),!t)return w;if(n.length>1){for(a="",g=0,e=0;e<t.length;e++)i=t.charAt(e),"$"===i?(a+=t.substring(g,e),e++,l=t.charCodeAt(e)-48,l<0||l>=n.length?a+="$"+t.charAt(e):a+=n[l],g=e+1):"\\"===i&&(a+=t.substring(g,e),e++,a+=t.charAt(e),g=e+1);a+=t.substr(g),t=a}return t}});
+require("$",function(r,n,o){o.config={name:'"pwd-wallet"',description:'"Phone app to strore encrypted passwords."',author:'"tolokoban"',version:'"0.0.6"',major:"0",minor:"0",revision:"6",date:"2017-04-11T15:14:26.000Z",consts:{}};var t=null;o.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),t=r,window.localStorage&&window.localStorage.setItem("Language",r),r},o.intl=function(r,n){var t,a,e,i,g,l,s,u=r[o.lang()],w=n[0];for(s in r)break;if(!s)return w;if(!u&&!(u=r[s]))return w;if(t=u[w],t||(u=r[s],t=u[w]),!t)return w;if(n.length>1){for(a="",g=0,e=0;e<t.length;e++)i=t.charAt(e),"$"===i?(a+=t.substring(g,e),e++,l=t.charCodeAt(e)-48,l<0||l>=n.length?a+="$"+t.charAt(e):a+=n[l],g=e+1):"\\"===i&&(a+=t.substring(g,e),e++,a+=t.charAt(e),g=e+1);a+=t.substr(g),t=a}return t}});
 //# sourceMappingURL=$.js.map
 require("wdg.layout-stack",function(e,t,a){var n=function(){function t(){return n(a,arguments)}var a={en:{}},n=e("$").intl;return t.all=a,t}(),i=e("dom"),r=e("tfw.data-binding"),o=e("tfw.hash-watcher"),s=function(e){var t=this,a=i.elem(this,"div","wdg-layout-stack"),n={},s=function(e,a){var n=t.hash;if(n){var i=n.exec(a);i&&(i.length<2||(t.value=i[1],t.args=e))}};r.propArray(this,"args"),r.propString(this,"value")(function(e){var t,a;for(t in n)a=n[t],"function"==typeof a.element?a=a.element():void 0!==a.element&&(a=a.element),(a=a.parentNode)&&(t==e?(i.addClass(a,"fade-in"),i.removeClass(a,"fade-out")):(i.addClass(a,"fade-out"),i.removeClass(a,"fade-in")))}),r.propRegexp(this,"hash")(function(){o(s)}),r.prop(this,"content")(function(e){if(Array.isArray(e)){var o,s={};e.forEach(function(e,t){void 0===e.$key&&(e.$key=t),s[e.$key]=e,void 0===o&&(o=e.$key)}),e=s,r.set(t,"value",o)}i.clear(a);var l,d,f;for(l in e)d=e[l],"function"==typeof d.element?d=d.element():void 0!==d.element&&(d=d.element),f=i.div([d]),void 0!==d.$scroll&&i.addClass(f,"scroll"),i.add(a,f);n=e,r.fire(t,"value")}),r.propAddClass(this,"wide"),r.propRemoveClass(this,"visible","hide"),e=r.extend({args:[],value:"",content:{},hash:null,wide:!1,visible:!0},e,this)};t.exports=s,t.exports._=n});
 //# sourceMappingURL=wdg.layout-stack.js.map

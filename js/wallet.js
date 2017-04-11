@@ -80,7 +80,6 @@ module.exports = {
 };
 
 
-<<<<<<< HEAD
 var DEFAULT = JSON.stringify({ version: 0, items: [] });
 
 function get() {
@@ -109,17 +108,6 @@ function set( value ) {
   }
   obj.items = value;
   Local.set( "wallet", obj );
-=======
-function get() {
-  var arr = Local.get( "wallet", [] );
-  if ( !Array.isArray( arr ) ) return [];
-  return arr;
-}
-
-function set( value ) {
-  if ( typeof value === 'undefined' ) value = [];
-  Local.set( "wallet", value );
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
 }
 
 function nameEqual( name ) {
@@ -136,10 +124,7 @@ function nameNotEqual( name ) {
   };
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
   
 module.exports._ = _;
 /**

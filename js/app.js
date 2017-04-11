@@ -179,16 +179,10 @@ function refreshShow( args ) {
   g_nameToDelete = name;
   $( 'showName' ).textContent = name;
   $( 'showUsr' ).textContent = data.usr;
-<<<<<<< HEAD
   $( 'showPwd' ).textContent = Master.decode( data.pwd, name );
 }
 
 
-=======
-  $( 'showPwd' ).textContent = data.pwd;
-}
-
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
   
 module.exports._ = _;
 /**

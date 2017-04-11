@@ -23,16 +23,11 @@ module.exports = {
 
   toIntArray: function ( text ) {
     var arr = [];
-<<<<<<< HEAD
     var val;
     for ( var i = 0; i < text.length; i++ ) {
       val = ALPHABET.indexOf( text.charAt( i ) );
       if (val < 0) val = 0;
       arr.push( val );
-=======
-    for ( var i = 0; i < text.length; i++ ) {
-      arr.push( ALPHABET.indexOf( text.charAt( i ) ) );
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
     }
     return arr;
   },
@@ -65,10 +60,7 @@ Object.defineProperty( module.exports, 'length', {
   enumerable: true
 } );
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
   
 module.exports._ = _;
 /**

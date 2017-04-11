@@ -62,24 +62,15 @@ addListener(
         APP = require('app');
 setTimeout(function (){if(typeof APP.start==='function')APP.start()});
 var W = require('x-widget');
-<<<<<<< HEAD
-        W('wdg.layout-stack0', 'wdg.layout-stack', {
-=======
-        W('wdg.layout-stack129', 'wdg.layout-stack', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+        W('wdg.layout-stack33', 'wdg.layout-stack', {
             hash: "^#([a-zA-Z0-9]+)",
             content: [
           W({
               elem: "section",
               prop: {"$key": "master"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex1', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex130', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex34', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   content: [
@@ -93,30 +84,18 @@ var W = require('x-widget');
                       type: "password",
                       wide: "true",
                       focus: "true"}),
-<<<<<<< HEAD
-                                      W('wdg.button2', 'wdg.button', {
-=======
-                                      W('wdg.button131', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                      W('wdg.button35', 'wdg.button', {
                       text: "Decrypt passwords' list",
                       wide: "true",
                       icon: "right"}),
                   W({
                       elem: "blockquote",
                       children: [
-<<<<<<< HEAD
                         "\r\n                      Please provide a strong master password (at least ",
                         W({
                           elem: "b",
                           children: ["10 characters"]}),
                         "),\r\n                      for this is your protection for all other passwords.\r\n                  "]}),
-=======
-                        "\n                      Please provide a strong master password (at least ",
-                        W({
-                          elem: "b",
-                          children: ["10 characters"]}),
-                        "),\n                      for this is your protection for all other passwords.\n                  "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
                   W({
                       elem: "input",
                       attr: {
@@ -126,54 +105,29 @@ var W = require('x-widget');
                       elem: "center",
                       prop: {"$grow": "0"},
                       children: [
-<<<<<<< HEAD
                         "\r\n                    ",
-                                                W('wdg.button3', 'wdg.button', {
+                                                W('wdg.button36', 'wdg.button', {
                           icon: "gear",
                           text: "Config",
                           enabled: "false"}),
                         "\r\n                  "]}),
-                                      W('wdg.flex4', 'wdg.flex', {
+                                      W('wdg.flex37', 'wdg.flex', {
                       justify: "between",
                       $grow: "0",
                       content: [
-                                              W('wdg.button5', 'wdg.button', {
+                                              W('wdg.button38', 'wdg.button', {
                           icon: "import",
                           text: "Import"}),
-                                              W('wdg.button6', 'wdg.button', {
+                                              W('wdg.button39', 'wdg.button', {
                           icon: "export",
                           text: "Export"})]})]}),
                 "\r\n            "]}),
-=======
-                        "\n                    ",
-                                                W('wdg.button132', 'wdg.button', {
-                          icon: "gear",
-                          text: "Config",
-                          enabled: "false"}),
-                        "\n                  "]}),
-                                      W('wdg.flex133', 'wdg.flex', {
-                      justify: "between",
-                      $grow: "0",
-                      content: [
-                                              W('wdg.button134', 'wdg.button', {
-                          icon: "import",
-                          text: "Import"}),
-                                              W('wdg.button135', 'wdg.button', {
-                          icon: "export",
-                          text: "Export"})]})]}),
-                "\n            "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
           W({
               elem: "section",
               prop: {"$key": "view"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex7', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex136', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex40', 'wdg.flex', {
                   orientation: "V",
                   justify: "space-between",
                   type: "fill",
@@ -185,47 +139,26 @@ var W = require('x-widget');
                   W({
                       elem: "div",
                       attr: {"id": "list"}}),
-<<<<<<< HEAD
-                                      W('wdg.flex8', 'wdg.flex', {
+                                      W('wdg.flex41', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button9', 'wdg.button', {
-=======
-                                      W('wdg.flex137', 'wdg.flex', {
-                      type: "fill",
-                      $grow: "0",
-                      content: [
-                                              W('wdg.button138', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                              W('wdg.button42', 'wdg.button', {
                           icon: "close",
                           type: "simple",
                           text: "Close",
                           href: "#master"}),
-<<<<<<< HEAD
-                                              W('wdg.button10', 'wdg.button', {
+                                              W('wdg.button43', 'wdg.button', {
                           icon: "add",
                           text: "Add",
                           href: "#new"})]})]}),
                 "\r\n            "]}),
-=======
-                                              W('wdg.button139', 'wdg.button', {
-                          icon: "add",
-                          text: "Add",
-                          href: "#new"})]})]}),
-                "\n            "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
           W({
               elem: "section",
               prop: {"$key": "show"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex11', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex140', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex44', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   type: "default",
@@ -239,76 +172,42 @@ var W = require('x-widget');
                       elem: "article",
                       attr: {"id": "showPanel"},
                       children: [
-<<<<<<< HEAD
                         "\r\n                    ",
                         W({
                           elem: "div",
                           attr: {"id": "showUsr"}}),
                         "\r\n                    ",
-=======
-                        "\n                    ",
-                        W({
-                          elem: "div",
-                          attr: {"id": "showUsr"}}),
-                        "\n                    ",
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
                         W({
                           elem: "div",
                           attr: {
                             id: "showPwd",
                             class: "theme-elevation-2"}}),
-<<<<<<< HEAD
                         "\r\n                    ",
-=======
-                        "\n                    ",
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
                         W({
                           elem: "div",
                           attr: {"id": "showHint"},
                           children: ["Press to reveal the password..."]}),
-<<<<<<< HEAD
                         "\r\n                  "]}),
-                                      W('wdg.flex12', 'wdg.flex', {
+                                      W('wdg.flex45', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button13', 'wdg.button', {
-=======
-                        "\n                  "]}),
-                                      W('wdg.flex141', 'wdg.flex', {
-                      type: "fill",
-                      $grow: "0",
-                      content: [
-                                              W('wdg.button142', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                              W('wdg.button46', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Back",
                           href: "#view"}),
-<<<<<<< HEAD
-                                              W('wdg.button14', 'wdg.button', {
+                                              W('wdg.button47', 'wdg.button', {
                           icon: "delete",
                           text: "Delete",
                           type: "warning"})]})]}),
                 "\r\n            "]}),
-=======
-                                              W('wdg.button143', 'wdg.button', {
-                          icon: "delete",
-                          text: "Delete",
-                          type: "warning"})]})]}),
-                "\n            "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
           W({
               elem: "section",
               prop: {"$key": "new"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex15', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex144', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex48', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   type: "fill",
@@ -320,7 +219,6 @@ var W = require('x-widget');
                   W({
                       elem: "article",
                       children: [
-<<<<<<< HEAD
                         "\r\n                    ",
                                                 W('newName', 'wdg.text', {
                           label: "Item's name",
@@ -330,94 +228,49 @@ var W = require('x-widget');
                           label: "User name",
                           wide: "true"}),
                         "\r\n                    ",
-                                                W('wdg.flex16', 'wdg.flex', {
-=======
-                        "\n                    ",
-                                                W('newName', 'wdg.text', {
-                          label: "Item's name",
-                          wide: "true"}),
-                        "\n                    ",
-                                                W('newUsr', 'wdg.text', {
-                          label: "User name",
-                          wide: "true"}),
-                        "\n                    ",
-                                                W('wdg.flex145', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                                W('wdg.flex49', 'wdg.flex', {
                           type: "fill",
                           content: [
                                                       W('newPwd', 'wdg.text', {
                               label: "Password",
                               wide: "true"}),
-<<<<<<< HEAD
-                                                      W('wdg.icon17', 'wdg.icon', {
-=======
-                                                      W('wdg.icon146', 'wdg.icon', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                                      W('wdg.icon50', 'wdg.icon', {
                               button: "true",
                               content: "refresh",
                               size: "1rem",
                               $grow: "0"}),
-<<<<<<< HEAD
-                                                      W('wdg.icon18', 'wdg.icon', {
-=======
-                                                      W('wdg.icon147', 'wdg.icon', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                                      W('wdg.icon51', 'wdg.icon', {
                               button: "true",
                               content: "add",
                               size: "1rem",
                               $grow: "0"})]}),
-<<<<<<< HEAD
                         "\r\n                  "]}),
-                                      W('wdg.flex19', 'wdg.flex', {
+                                      W('wdg.flex52', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button20', 'wdg.button', {
-=======
-                        "\n                  "]}),
-                                      W('wdg.flex148', 'wdg.flex', {
-                      type: "fill",
-                      $grow: "0",
-                      content: [
-                                              W('wdg.button149', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                              W('wdg.button53', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-<<<<<<< HEAD
-                                              W('wdg.button21', 'wdg.button', {
+                                              W('wdg.button54', 'wdg.button', {
                           icon: "add",
                           text: "OK"})]})]}),
                 "\r\n            "]}),
-=======
-                                              W('wdg.button150', 'wdg.button', {
-                          icon: "add",
-                          text: "OK"})]})]}),
-                "\n            "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
           W({
               elem: "section",
               prop: {"$key": "edit"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex22', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex151', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex55', 'wdg.flex', {
                   orientation: "V",
                   justify: "between",
                   content: [
                   W({
                       elem: "center",
                       prop: {"$grow": "0"},
-<<<<<<< HEAD
-                      children: [                        W('wdg.button23', 'wdg.button', {
-=======
-                      children: [                        W('wdg.button152', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                      children: [                        W('wdg.button56', 'wdg.button', {
                           text: "Delete",
                           icon: "delete",
                           type: "warning"})]}),
@@ -431,7 +284,6 @@ var W = require('x-widget');
                   W({
                       elem: "article",
                       children: [
-<<<<<<< HEAD
                         "\r\n                    ",
                                                 W('editName', 'wdg.text', {
                           label: "Item's name",
@@ -441,74 +293,37 @@ var W = require('x-widget');
                           label: "User name",
                           wide: "true"}),
                         "\r\n                    ",
-                                                W('wdg.flex24', 'wdg.flex', {
-=======
-                        "\n                    ",
-                                                W('editName', 'wdg.text', {
-                          label: "Item's name",
-                          wide: "true"}),
-                        "\n                    ",
-                                                W('editUsr', 'wdg.text', {
-                          label: "User name",
-                          wide: "true"}),
-                        "\n                    ",
-                                                W('wdg.flex153', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                                W('wdg.flex57', 'wdg.flex', {
                           type: "fill",
                           content: [
                                                       W('editPwd', 'wdg.text', {
                               label: "Password",
                               wide: "true"}),
-<<<<<<< HEAD
-                                                      W('wdg.icon25', 'wdg.icon', {
-=======
-                                                      W('wdg.icon154', 'wdg.icon', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                                      W('wdg.icon58', 'wdg.icon', {
                               button: "true",
                               content: "add",
                               size: "1.5rem",
                               $grow: "0"})]}),
-<<<<<<< HEAD
                         "\r\n                  "]}),
-                                      W('wdg.flex26', 'wdg.flex', {
+                                      W('wdg.flex59', 'wdg.flex', {
                       type: "fill",
                       $grow: "0",
                       content: [
-                                              W('wdg.button27', 'wdg.button', {
-=======
-                        "\n                  "]}),
-                                      W('wdg.flex155', 'wdg.flex', {
-                      type: "fill",
-                      $grow: "0",
-                      content: [
-                                              W('wdg.button156', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                              W('wdg.button60', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-<<<<<<< HEAD
-                                              W('wdg.button28', 'wdg.button', {
+                                              W('wdg.button61', 'wdg.button', {
                           icon: "add",
                           text: "OK"})]})]}),
                 "\r\n            "]}),
-=======
-                                              W('wdg.button157', 'wdg.button', {
-                          icon: "add",
-                          text: "OK"})]})]}),
-                "\n            "]}),
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
           W({
               elem: "section",
               prop: {"$key": "del"},
               children: [
-<<<<<<< HEAD
                 "\r\n              ",
-                                W('wdg.flex29', 'wdg.flex', {
-=======
-                "\n              ",
-                                W('wdg.flex158', 'wdg.flex', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                W('wdg.flex62', 'wdg.flex', {
                   justify: "between",
                   orientation: "V",
                   content: [
@@ -524,43 +339,34 @@ var W = require('x-widget');
                           elem: "b",
                           attr: {"id": "nameToDelete"}}),
                         "?"]}),
-<<<<<<< HEAD
-                                      W('wdg.flex30', 'wdg.flex', {
+                                      W('wdg.flex63', 'wdg.flex', {
                       $grow: "0",
                       justify: "between",
                       content: [
-                                              W('wdg.button31', 'wdg.button', {
-=======
-                                      W('wdg.flex159', 'wdg.flex', {
-                      $grow: "0",
-                      justify: "between",
-                      content: [
-                                              W('wdg.button160', 'wdg.button', {
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
+                                              W('wdg.button64', 'wdg.button', {
                           icon: "left",
                           type: "simple",
                           text: "Cancel",
                           href: "#master"}),
-<<<<<<< HEAD
-                                              W('wdg.button32', 'wdg.button', {
+                                              W('wdg.button65', 'wdg.button', {
                           icon: "delete",
                           text: "Delete",
                           type: "warning"})]})]}),
                 "\r\n            "]})]})
-        W.bind('wdg.layout-stack0',{"args":{"S":["onPage"]}});
-        W.bind('wdg.button2',{"action":{"B":[["master","action"]],"S":["onSetPassword"]}});
-        W.bind('wdg.button5',{"action":{"S":["onImport"]}});
-        W.bind('wdg.button6',{"action":{"S":["onExport"]}});
-        W.bind('wdg.button14',{"action":{"S":["onConfirmDel"]}});
-        W.bind('wdg.icon17',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.icon18',{"action":{"S":["onRndAddCharPwd"]}});
-        W.bind('wdg.button21',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.icon25',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.button28',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.button32',{"action":{"S":["onDelPwd"]}});
+        W.bind('wdg.layout-stack33',{"args":{"S":["onPage"]}});
+        W.bind('wdg.button35',{"action":{"B":[["master","action"]],"S":["onSetPassword"]}});
+        W.bind('wdg.button38',{"action":{"S":["onImport"]}});
+        W.bind('wdg.button39',{"action":{"S":["onExport"]}});
+        W.bind('wdg.button47',{"action":{"S":["onConfirmDel"]}});
+        W.bind('wdg.icon50',{"action":{"S":["onRndPwd"]}});
+        W.bind('wdg.icon51',{"action":{"S":["onRndAddCharPwd"]}});
+        W.bind('wdg.button54',{"action":{"S":["onNewPwd"]}});
+        W.bind('wdg.icon58',{"action":{"S":["onRndPwd"]}});
+        W.bind('wdg.button61',{"action":{"S":["onNewPwd"]}});
+        W.bind('wdg.button65',{"action":{"S":["onDelPwd"]}});
     }
 );
-require("$",function(r,n,o){o.config={name:'"pwd-wallet"',description:'"Phone app to strore encrypted passwords."',author:'"tolokoban"',version:'"0.0.4"',major:"0",minor:"0",revision:"4",date:"2017-04-11T15:03:16.000Z",consts:{}};var t=null;o.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),t=r,window.localStorage&&window.localStorage.setItem("Language",r),r},o.intl=function(r,n){var t,a,e,i,g,l,s,u=r[o.lang()],w=n[0];for(s in r)break;if(!s)return w;if(!u&&!(u=r[s]))return w;if(t=u[w],t||(u=r[s],t=u[w]),!t)return w;if(n.length>1){for(a="",g=0,e=0;e<t.length;e++)i=t.charAt(e),"$"===i?(a+=t.substring(g,e),e++,l=t.charCodeAt(e)-48,l<0||l>=n.length?a+="$"+t.charAt(e):a+=n[l],g=e+1):"\\"===i&&(a+=t.substring(g,e),e++,a+=t.charAt(e),g=e+1);a+=t.substr(g),t=a}return t}});
+nction(r,n,o){o.config={name:'"pwd-wallet"',description:'"Phone app to strore encrypted passwords."',author:'"tolokoban"',version:'"0.0.5"',major:"0",minor:"0",revision:"5",date:"2017-04-11T15:05:25.000Z",consts:{}};var t=null;o.lang=function(r){return void 0===r&&(window.localStorage&&(r=window.localStorage.getItem("Language")),r||(r=window.navigator.language)||(r=window.navigator.browserLanguage)||(r="fr"),r=r.substr(0,2).toLowerCase()),t=r,window.localStorage&&window.localStorage.setItem("Language",r),r},o.intl=function(r,n){var t,a,e,i,g,l,s,u=r[o.lang()],w=n[0];for(s in r)break;if(!s)return w;if(!u&&!(u=r[s]))return w;if(t=u[w],t||(u=r[s],t=u[w]),!t)return w;if(n.length>1){for(a="",g=0,e=0;e<t.length;e++)i=t.charAt(e),"$"===i?(a+=t.substring(g,e),e++,l=t.charCodeAt(e)-48,l<0||l>=n.length?a+="$"+t.charAt(e):a+=n[l],g=e+1):"\\"===i&&(a+=t.substring(g,e),e++,a+=t.charAt(e),g=e+1);a+=t.substr(g),t=a}return t}});
 //# sourceMappingURL=$.js.map
 require("wdg.layout-stack",function(e,t,a){var n=function(){function t(){return n(a,arguments)}var a={en:{}},n=e("$").intl;return t.all=a,t}(),i=e("dom"),r=e("tfw.data-binding"),o=e("tfw.hash-watcher"),s=function(e){var t=this,a=i.elem(this,"div","wdg-layout-stack"),n={},s=function(e,a){var n=t.hash;if(n){var i=n.exec(a);i&&(i.length<2||(t.value=i[1],t.args=e))}};r.propArray(this,"args"),r.propString(this,"value")(function(e){var t,a;for(t in n)a=n[t],"function"==typeof a.element?a=a.element():void 0!==a.element&&(a=a.element),(a=a.parentNode)&&(t==e?(i.addClass(a,"fade-in"),i.removeClass(a,"fade-out")):(i.addClass(a,"fade-out"),i.removeClass(a,"fade-in")))}),r.propRegexp(this,"hash")(function(){o(s)}),r.prop(this,"content")(function(e){if(Array.isArray(e)){var o,s={};e.forEach(function(e,t){void 0===e.$key&&(e.$key=t),s[e.$key]=e,void 0===o&&(o=e.$key)}),e=s,r.set(t,"value",o)}i.clear(a);var l,d,f;for(l in e)d=e[l],"function"==typeof d.element?d=d.element():void 0!==d.element&&(d=d.element),f=i.div([d]),void 0!==d.$scroll&&i.addClass(f,"scroll"),i.add(a,f);n=e,r.fire(t,"value")}),r.propAddClass(this,"wide"),r.propRemoveClass(this,"visible","hide"),e=r.extend({args:[],value:"",content:{},hash:null,wide:!1,visible:!0},e,this)};t.exports=s,t.exports._=n});
 //# sourceMappingURL=wdg.layout-stack.js.map
@@ -624,23 +430,3 @@ require("offline",function(r,e,o){var n=function(){function e(){return n(o,argum
 //# sourceMappingURL=offline.js.map
 require("font.josefin",function(n,r,t){var e=function(){function r(){return e(t,arguments)}var t={en:{},fr:{}},e=n("$").intl;return r.all=t,r}();r.exports._=e});
 //# sourceMappingURL=font.josefin.js.map
-=======
-                                              W('wdg.button161', 'wdg.button', {
-                          icon: "delete",
-                          text: "Delete",
-                          type: "warning"})]})]}),
-                "\n            "]})]})
-        W.bind('wdg.layout-stack129',{"args":{"S":["onPage"]}});
-        W.bind('wdg.button131',{"action":{"B":[["master","action"]],"S":["onSetPassword"]}});
-        W.bind('wdg.button134',{"action":{"S":["onImport"]}});
-        W.bind('wdg.button135',{"action":{"S":["onExport"]}});
-        W.bind('wdg.button143',{"action":{"S":["onConfirmDel"]}});
-        W.bind('wdg.icon146',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.icon147',{"action":{"S":["onRndAddCharPwd"]}});
-        W.bind('wdg.button150',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.icon154',{"action":{"S":["onRndPwd"]}});
-        W.bind('wdg.button157',{"action":{"S":["onNewPwd"]}});
-        W.bind('wdg.button161',{"action":{"S":["onDelPwd"]}});
-    }
-);
->>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b

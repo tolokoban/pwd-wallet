@@ -28,7 +28,7 @@ describe( 'Alphabet', function () {
     }
 
     check( "Fernande", [ 31, 4, 17, 13, 0, 13, 3, 4 ] );
-    check( "L€ffort", [ 37, -1, 5, 5, 14, 17, 19 ] );
+    check( "L€ffort", [ 37, 0, 5, 5, 14, 17, 19 ] );
   } );
 
   describe( 'fromIntArray()', function () {

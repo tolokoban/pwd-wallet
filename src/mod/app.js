@@ -178,5 +178,5 @@ function refreshShow( args ) {
   g_nameToDelete = name;
   $( 'showName' ).textContent = name;
   $( 'showUsr' ).textContent = data.usr;
-  $( 'showPwd' ).textContent = data.pwd;
+  $( 'showPwd' ).textContent = Master.decode( data.pwd, name );
 }

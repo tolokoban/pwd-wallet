@@ -22,8 +22,11 @@ module.exports = {
 
   toIntArray: function ( text ) {
     var arr = [];
+    var val;
     for ( var i = 0; i < text.length; i++ ) {
-      arr.push( ALPHABET.indexOf( text.charAt( i ) ) );
+      val = ALPHABET.indexOf( text.charAt( i ) );
+      if (val < 0) val = 0;
+      arr.push( val );
     }
     return arr;
   },

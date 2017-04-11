@@ -79,15 +79,34 @@ module.exports = {
 };
 
 
+var DEFAULT = JSON.stringify({ version: 0, items: [] });
+
 function get() {
-  var arr = Local.get( "wallet", [] );
-  if ( !Array.isArray( arr ) ) return [];
-  return arr;
+  var obj = Local.get( "wallet", JSON.parse( DEFAULT ) );
+  if ( !obj || !Array.isArray( obj.items ) ) {
+    obj = JSON.parse( DEFAULT );
+  }
+  return obj.items;
 }
 
 function set( value ) {
-  if ( typeof value === 'undefined' ) value = [];
-  Local.set( "wallet", value );
+  if ( typeof value === 'undefined' ) {
+    value = [];
+  }
+  else if (!Array.isArray( value )) {
+    value = [];
+  }
+  var obj = Local.get( "wallet", JSON.parse( DEFAULT ) );
+  if ( !obj || !Array.isArray( obj.items ) ) {
+    obj = JSON.parse( DEFAULT );
+  }
+  if (typeof obj.version === 'number') {
+    obj.version++;
+  } else {
+    obj.version = 0;
+  }
+  obj.items = value;
+  Local.set( "wallet", obj );
 }
 
 function nameEqual( name ) {

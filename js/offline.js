@@ -3,7 +3,11 @@
 
 if( navigator.serviceWorker ) {
     navigator.serviceWorker.register('offline.js', {
+<<<<<<< HEAD
         scope: '/pwd-wallet/'
+=======
+        scope: '/space-adventure/'
+>>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
     });
 
     navigator.serviceWorker.ready.then(function(reg) {

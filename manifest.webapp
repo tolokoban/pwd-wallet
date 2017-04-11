@@ -9,6 +9,10 @@
     "512": "/icon-512.png"
   },
   "name": "pwd-wallet",
+<<<<<<< HEAD
   "version": "0.0.4",
+=======
+  "version": "0.0.3",
+>>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
   "description": "Phone app to strore encrypted passwords."
 }

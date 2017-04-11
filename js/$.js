@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /** @module $ */require( '$', function(require, module, exports) {     exports.config={"name":"\"pwd-wallet\"","description":"\"Phone app to strore encrypted passwords.\"","author":"\"tolokoban\"","version":"\"0.0.4\"","major":"0","minor":"0","revision":"4","date":"2017-04-11T15:03:16.000Z","consts":{}};
+=======
+/** @module $ */require( '$', function(require, module, exports) {     exports.config={"name":"\"pwd-wallet\"","description":"\"Phone app to strore encrypted passwords.\"","author":"\"tolokoban\"","version":"\"0.0.3\"","major":"0","minor":"0","revision":"3","date":"2017-04-06T19:25:04.000Z","consts":{}};
+>>>>>>> 5aa04f996bed971af02307b22b9505bccabe933b
 var currentLang = null;
 exports.lang = function(lang) {
     if (lang === undefined) {
